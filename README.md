@@ -18,7 +18,7 @@ The figure shows how PLU module works(use fixmatch as example).
 
 
 #### Abstract
-
+Open World Object Detection (OWOD) combines open-set object detection with incremental learning capabilities to handle the challenge of the open and dynamic visual world. Existing works assume that a foreground predictor trained on the seen categories can be directly transferred to identify the unseen categories' locations by selecting the top-k most confident foreground predictions. However, the assumption is hardly valid in practice. This is because the predictor is inevitably biased to the known categories, and fails under the shift in the appearance of the unseen categories. In this work, we aim to build an unbiased foreground predictor by re-formulating the task under Unsupervised Domain Adaptation, where the current biased predictor helps form the domains: the seen object locations and confident background locations as the source domain, and the rest ambiguous ones as the target domain. Then, we adopt the simple and effective self-training method to learn a predictor based on the domain-invariant foreground features, hence achieving unbiased prediction robust to the shift in appearance between the seen and unseen categories. Our approach's pipeline can adapt to various detection frameworks and UDA methods, empirically validated by OWOD evaluation, where we achieve state-of-the-art performance.
 
 ## Installation
 1. Clone the repo
@@ -42,12 +42,9 @@ pip install reliability shortuuid
 
 ```
 Other detectron2 versions can be found here: [detectron2](https://github.com/facebookresearch/detectron2/releases). We recommend directly using pre-built version. The pre-built package has to be used with corresponding version of CUDA and official PyTorch release.
-## :open_book: Overview
-![overall_structure](method-1.png)
-![fixmatch](method-2.png)
 
 ## Dataset
-
+Download the required dataset in the `./datasets` folder.
    
 ## Quick Start 
 
